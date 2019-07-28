@@ -1,12 +1,18 @@
 import React from 'react'
-
+import ChildPureComponent from './ChildPureComponent'
 class Todo extends React.Component {
-
+  state = {
+    unseen: '',
+  }
   componentDidMount() {
     setInterval(() => {
       this.setState(() => {
         console.log('setting state');
-        return { unseen: "does not display" }
+        return {
+          unseen: {
+            complex: 'test'
+          }
+        }
       });
     }, 5000);
   }
@@ -19,7 +25,10 @@ class Todo extends React.Component {
 
   render() {
     console.log('render called');
-    return (<div>Re-render</div>);
+    return (<div>
+      Re-render
+      <ChildPureComponent unseen={this.state.unseen} />
+    </div>);
   }
 }
 

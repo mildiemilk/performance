@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import logo from './logo.svg';
 import './App.css';
 import Todo from './Components/shouldComponentUpdate'
+import Onclick from './Components/Onclick'
 class App extends Component {
   state = {
     users: []
@@ -39,6 +40,7 @@ class App extends Component {
             {this.state.users}
           </a>
           <Todo />
+          <Onclick />
         </header>
         <button onClick={this.addNewUser}> test </button>
       </div>
